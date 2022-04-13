@@ -27,4 +27,4 @@ def get_statistic_list(db: Session, from_, to, sort_at_date_field, sort_at_views
     sort_by_fields = [field for field, boolean in fields.items() if boolean]
     if from_ and to:
         return db.query(models.Statistic).filter(models.Statistic.date.in_((from_, to))).order_by(*sort_by_fields).all()
-    return db.query(models.Statistic).order_by(*[desc(sort_field) for sort_field in sort_by_fields]).all()
+    return db.query(models.Statistic).order_by(*[desc(sort_by_field) for sort_by_field in sort_by_fields]).all()
