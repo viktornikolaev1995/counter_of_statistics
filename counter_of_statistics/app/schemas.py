@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 
 class StatisticCreateSchema(BaseModel):
-    date: Optional[date]
+    date: date
     views: Optional[int]
     clicks: Optional[int]
     cost: Optional[float]

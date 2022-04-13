@@ -1,10 +1,10 @@
 from datetime import date
 from sqlalchemy import Column, Integer, Float, Date
 from sqlalchemy.ext.hybrid import hybrid_property
-import database
+from .database import Base
 
 
-class Statistic(database.Base):
+class Statistic(Base):
     __tablename__ = 'statistic'
 
     id = Column(Integer, primary_key=True, autoincrement=True, unique=True, index=True)
